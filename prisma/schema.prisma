@@ -1,0 +1,34 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  name  String @unique
+  color String
+
+  id        String    @id @default(uuid())
+  createdAt DateTime  @default(now())
+  Product   Product[]
+
+  @@map("categories")
+}
+
+model Product {
+  name         String
+  amount       Int
+  categoryName String
+
+  checked Boolean? @default(false)
+
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+
+  category Category @relation(fields: [categoryName], references: [name])
+
+  @@map("products")
+}
