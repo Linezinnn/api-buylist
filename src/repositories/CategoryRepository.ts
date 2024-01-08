@@ -16,10 +16,10 @@ class CategoryRepositoryPrisma implements ICategoryRepository{
         return result
     }
 
-    async findByName(name: string): Promise<Category | null> {
-        const result = await prisma.category.findUnique({
+    async findById(id: string): Promise<Category | null> {
+        const result = await prisma.category.findFirst({
             where: {
-                name
+                id: id
             }
         })
 
@@ -32,6 +32,15 @@ class CategoryRepositoryPrisma implements ICategoryRepository{
         return result
     }
 
+    async deleteById(id: string) {
+        const result = await prisma.category.delete({
+            where: {
+                id,
+            }
+        })
+
+        return result
+    }
     
 }
 

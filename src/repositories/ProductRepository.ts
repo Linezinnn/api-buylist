@@ -32,7 +32,7 @@ class ProductRepositoryPrisma implements IProductRepository {
     async deleteById(id: string): Promise<object> {
         await prisma.product.delete({
             where: {
-                id: id
+                id,
             }
         })
 

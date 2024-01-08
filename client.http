@@ -7,3 +7,7 @@ content-type: application/json
    "name": "Limpeza",
    "color": "#e3e3e3"
 }
+
+###
+
+DELETE http://localhost:8080/category/20cedeb1-f37e-4c96-aeac-3a83e2c13f01

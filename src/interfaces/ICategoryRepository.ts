@@ -3,8 +3,9 @@ import { Category } from "./ICategory";
 
 interface ICategoryRepository {
     create(data: ICreateCategoryRequestDTO): Promise<Category>
-    findByName(name: string): Promise<Category | null>
+    findById(id: string): Promise<Category | null>
     findAll(): Promise<Category[]>
+    deleteById(id: string): Promise<object>
 }
 
 export { ICategoryRepository }

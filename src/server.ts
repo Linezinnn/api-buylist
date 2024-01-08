@@ -1,7 +1,7 @@
 import fastify, { FastifyInstance } from "fastify";
 
 import './database/prisma-client.ts'
-import { routesIndex } from "./routes/routes.js";
+import { routesIndex } from "./routes/index.js";
 import { fastifyCors } from "@fastify/cors";
 
 const server: FastifyInstance = fastify({ logger: true })

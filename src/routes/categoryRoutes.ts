@@ -27,6 +27,17 @@ async function categoryRoutes(fastify: FastifyInstance, prefix: String){
         .send(result?.data)
 
     })
+
+    fastify.delete(`/${prefix}/:id`, async (request, reply) => {
+
+        const result: IControllerReturn = await 
+        categoryController.deleteById(request)
+
+        reply
+        .status(result.status)
+        .send(result?.data)
+
+    })
 }
 
 export { categoryRoutes }
