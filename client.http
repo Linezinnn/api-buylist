@@ -1,0 +1,9 @@
+# Create
+
+POST http://localhost:8080/category
+content-type: application/json
+
+{
+   "name": "Limpeza",
+   "color": "#e3e3e3"
+}
